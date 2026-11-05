@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manu S P – Software Engineer</title>
+<meta name="description" content="Portfolio of Manu S P, MCA student building full-stack web and Android applications with Python, Django, Java and Kotlin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f5f7fb;--surface:#fff;--ink:#0f172a;--muted:#5b657a;--line:#e3e8f0;--accent:#2548d9;--accent2:#6a4df0;--accent-soft:#e8edff;--nav:rgba(245,247,251,.85);--shadow:0 1px 2px rgba(15,23,42,.05),0 8px 24px rgba(15,23,42,.06);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0b1020;--surface:#131a2e;--ink:#e9edf7;--muted:#98a3bd;--line:#232c45;--accent:#7c9bff;--accent2:#a592ff;--accent-soft:#1a2447;--nav:rgba(11,16,32,.85);--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0b1020;--surface:#131a2e;--ink:#e9edf7;--muted:#98a3bd;--line:#232c45;--accent:#7c9bff;--accent2:#a592ff;--accent-soft:#1a2447;--nav:rgba(11,16,32,.85);--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--nav);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+/* nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--nav);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;letter-spacing:-.01em}
+.logo{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+.top ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;font-size:15px}
+.top ul a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:500}
+.top ul a:hover{color:var(--ink);background:var(--accent-soft)}
+/* buttons */
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;padding:12px 22px;border-radius:10px;border:1px solid var(--line);text-decoration:none;font-weight:600;font-size:15px;background:var(--surface);color:var(--ink);font-family:inherit;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s}
+.btn:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:#fff}
+:root:not([data-theme="light"]) .btn.primary{color:#0b1020}
+@media (prefers-color-scheme:light){.btn.primary{color:#fff}}
+/* hero */
+.hero{padding:80px 0 56px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;background:var(--accent-soft);color:var(--accent);font-size:14px;font-weight:600;margin-bottom:22px}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:#22c55e}
+.hero h1{font-size:clamp(2.4rem,6vw,4.1rem);line-height:1.05;letter-spacing:-.035em;font-weight:800;margin:0 0 18px}
+.hero .role{font-size:1.3rem;font-weight:600;color:var(--accent);margin:0 0 16px}
+.hero .lead{color:var(--muted);font-size:1.12rem;max-width:34em;margin:0 0 30px}
+.profile{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.avatar{width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;display:grid;place-items:center;font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:20px}
+.profile dl{margin:0;display:grid;gap:14px}
+.profile dt{font-size:13px;color:var(--muted);font-weight:500}
+.profile dd{margin:0;font-weight:600}
+/* stats */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);margin-bottom:24px}
+.stat{padding:22px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:2rem;letter-spacing:-.03em;line-height:1.2;color:var(--accent)}
+.stat span{font-size:14px;color:var(--muted)}
+/* sections */
+section{padding:72px 0 8px}
+.sh{margin-bottom:32px}
+.sh h2{font-size:2rem;letter-spacing:-.025em;margin:0 0 8px;font-weight:800}
+.sh p{margin:0;color:var(--muted);max-width:36em}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.about p{margin:0 0 16px;color:var(--muted)}
+.about p:first-child{color:var(--ink);font-size:1.15rem}
+/* projects */
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card h3{margin:0 0 4px;font-size:1.3rem;letter-spacing:-.015em}
+.card .tag{margin:0 0 14px;font-size:14px;color:var(--accent);font-weight:600}
+.card p{margin:0 0 18px;color:var(--muted);font-size:16px}
+.stats{margin:auto 0 18px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:8px}
+.stats div{display:flex;align-items:baseline;gap:10px}
+.stats b{min-width:44px;font-size:1.25rem;color:var(--ink)}
+.stats span{font-size:14px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{font-size:13.5px;padding:4px 12px;border-radius:99px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+/* timeline */
+.job{position:relative;padding:0 0 0 32px;border-left:2px solid var(--line);margin-left:6px}
+.job::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.job h3{margin:0;font-size:1.25rem}
+.job .meta{color:var(--muted);font-size:15px;margin:2px 0 12px}
+ul.bul{margin:0;padding-left:20px;max-width:42em;color:var(--muted)}
+ul.bul li{margin-bottom:8px}
+ul.bul li::marker{color:var(--accent)}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.sk{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.sk h3{font-size:1rem;margin:0 0 12px}
+/* education */
+.edu{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.edu li{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.edu strong{display:block;margin-bottom:6px}
+.edu span{color:var(--muted);font-size:15px}
+/* contact */
+.contact-box{margin-top:72px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:24px;padding:56px 40px;color:#fff;text-align:center}
+.contact-box h2{font-size:2.1rem;letter-spacing:-.025em;margin:0 0 12px;font-weight:800}
+.contact-box p{margin:0 auto 28px;max-width:34em;opacity:.92}
+.contact-box .cta{justify-content:center}
+.contact-box .btn{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff}
+.contact-box .btn.primary{background:#fff;color:#1b2a8f;border-color:#fff}
+.mail{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px}
+.mail code{font:inherit;font-weight:600;padding:12px 18px;border:1px solid rgba(255,255,255,.35);border-radius:10px;background:rgba(255,255,255,.14);user-select:all}
+footer{padding:40px 0 48px;color:var(--muted);font-size:14px;text-align:center}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:48px}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .about,.proj,.skills,.edu{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .top ul{display:none}
+  .contact-box{padding:40px 22px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card{transition:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="logo">MS</span>Manu S P</a>
+    <nav aria-label="Primary"><ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <span class="status">Open to internships and junior roles</span>
+      <h1>Hi, I’m Manu S P.</h1>
+      <p class="role">Full-stack and Android developer</p>
+      <p class="lead">I build web apps and Android apps with Python, Django and Kotlin. MCA student at SJCET Palai, focused on clean backends and interfaces that work on any screen.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">View projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn" href="https://github.com/Manusp2004" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <aside class="profile" aria-label="Profile summary">
+      <div class="avatar" aria-hidden="true">MS</div>
+      <dl>
+        <div><dt>Location</dt><dd>Kottayam, Kerala, India</dd></div>
+        <div><dt>Studying</dt><dd>MCA, St. Joseph’s College (SJCET), Palai</dd></div>
+        <div><dt>Main stack</dt><dd>Python, Django, Kotlin, MySQL</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat"><b>4</b><span>full projects shipped</span></div>
+    <div class="stat"><b>6</b><span>languages used</span></div>
+    <div class="stat"><b>2</b><span>databases: MySQL, SQLite</span></div>
+    <div class="stat"><b>3</b><span>certifications</span></div>
+  </div>
+
+  <section id="about">
+    <div class="sh"><h2>About</h2></div>
+    <div class="about">
+      <div>
+        <p>I’m a Master of Computer Applications student who learns by shipping real software.</p>
+        <p>In the last year I’ve built a coding practice platform that runs user code through an external API, an auction system with secure sign-in and an admin console, a college voting system, and an Android app during an internship.</p>
+      </div>
+      <div>
+        <p>I like backends that behave, interfaces that stay readable on a phone, and code a teammate can pick up without a walkthrough.</p>
+        <p>I’m strongest in Python and Django, comfortable in Java, PHP and Kotlin, and I back it up with a solid base in data structures, DBMS and operating systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sh"><h2>Selected projects</h2><p>Four builds across web and mobile, each with a clear job to do.</p></div>
+    <div class="proj">
+      <article class="card">
+        <h3>DevPath</h3>
+        <p class="tag">Learning and coding practice platform</p>
+        <p>Learners follow structured programming roadmaps, then write and run code in the browser. Django passes each run request to the JDoodle API and shows the output on the same page.</p>
+        <div class="stats">
+          <div><b>1</b><span>third-party API integrated end to end</span></div>
+          <div><b>0</b><span>local setup needed to run code</span></div>
+          <div><b>2</b><span>core features: roadmaps and live practice</span></div>
+        </div>
+        <ul class="chips"><li>Python</li><li>Django</li><li>Tailwind CSS</li><li>JDoodle API</li></ul>
+      </article>
+      <article class="card">
+        <h3>Online Auction and Bidding System</h3>
+        <p class="tag">Final-year main project</p>
+        <p>An auction marketplace where sellers list products, buyers bid, and administrators manage auctions. Access is controlled by role and every screen is responsive.</p>
+        <div class="stats">
+          <div><b>4</b><span>modules: listings, bidding, auctions, admin</span></div>
+          <div><b>3</b><span>layers built: auth, backend, front end</span></div>
+          <div><b>1</b><span>role-based access model</span></div>
+        </div>
+        <ul class="chips"><li>Python</li><li>Django</li><li>SQLite</li><li>JavaScript</li></ul>
+      </article>
+      <article class="card">
+        <h3>Online College Voting System</h3>
+        <p class="tag">Secure campus elections</p>
+        <p>Students sign in, vote and see a clean ballot, while administrators manage candidates and results. Server-side sessions tie each vote to a verified user.</p>
+        <div class="stats">
+          <div><b>3</b><span>relational tables: students, admins, votes</span></div>
+          <div><b>2</b><span>user types with separate dashboards</span></div>
+        </div>
+        <ul class="chips"><li>PHP</li><li>MySQL</li><li>HTML/CSS</li></ul>
+      </article>
+      <article class="card">
+        <h3>Android Calculator</h3>
+        <p class="tag">Native Android app</p>
+        <p>A native calculator with standard arithmetic, built with XML layouts and event-driven Kotlin so every tap gives instant feedback.</p>
+        <div class="stats">
+          <div><b>4</b><span>core arithmetic operations</span></div>
+          <div><b>100%</b><span>native Kotlin</span></div>
+        </div>
+        <ul class="chips"><li>Kotlin</li><li>Android Studio</li><li>XML</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sh"><h2>Experience</h2></div>
+    <div class="job">
+      <h3>Android Development Intern</h3>
+      <p class="meta">ICT Academy of Kerala, April–May 2024</p>
+      <ul class="bul">
+        <li>Built Android apps in Kotlin and Android Studio.</li>
+        <li>Designed responsive screens and wired up event-driven features.</li>
+        <li>Debugged, tested and optimized the app before hand-off.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sh"><h2>Skills</h2></div>
+    <div class="skills">
+      <div class="sk"><h3>Languages</h3><ul class="chips"><li>Python</li><li>Java</li><li>PHP</li><li>Kotlin</li><li>C</li><li>C++</li></ul></div>
+      <div class="sk"><h3>Web</h3><ul class="chips"><li>Django</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Tailwind CSS</li></ul></div>
+      <div class="sk"><h3>Data and tools</h3><ul class="chips"><li>MySQL</li><li>SQLite</li><li>Git</li><li>GitHub</li><li>Android Studio</li><li>VS Code</li></ul></div>
+      <div class="sk"><h3>Foundations</h3><ul class="chips"><li>Data Structures</li><li>OOP</li><li>DBMS</li><li>Networks</li><li>Operating Systems</li><li>Cloud Computing</li></ul></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sh"><h2>Education and certifications</h2></div>
+    <ul class="edu">
+      <li><strong>Master of Computer Applications</strong><span>St. Joseph’s College of Engineering and Technology, Palai. 2025 to present</span></li>
+      <li><strong>Bachelor of Computer Application</strong><span>Bishop Speechly College, Pallom (MG University). 2022 to 2025</span></li>
+      <li><strong>Certifications</strong><span>Cloud Computing (NPTEL), Introduction to Software Engineering (IBM, Coursera), AI Aware Badge (AI For All)</span></li>
+    </ul>
+  </section>
+
+  <div class="contact-box" id="contact">
+    <h2>Let’s work together</h2>
+    <p>I’m looking for an internship or junior software role where I can build real products and learn from a strong team.</p>
+    <div class="cta">
+      <span class="mail"><code id="addr">manusp978@gmail.com</code><button class="btn primary" id="copy" type="button">Copy email</button></span>
+      <a class="btn" href="mailto:manusp978@gmail.com" target="_blank" rel="noopener">Open mail app</a>
+      <a class="btn" href="https://www.linkedin.com/in/manusp978" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Manusp2004" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Manu S P. Kottayam, Kerala, India.</footer>
+<script>
+(function(){
+  var b=document.getElementById('copy'),a=document.getElementById('addr');
+  if(!b||!a)return;
+  b.addEventListener('click',function(){
+    var t=a.textContent,done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},2000)};
+    function fallback(){
+      try{var r=document.createRange();r.selectNodeContents(a);var s=getSelection();s.removeAllRanges();s.addRange(r);
+      if(document.execCommand('copy'))done();else b.textContent='Press Ctrl+C to copy'}catch(e){b.textContent='Select and copy the address'}
+    }
+    try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+  });
+})();
+</script>
+</body>
+</html>
